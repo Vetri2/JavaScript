@@ -1,0 +1,258 @@
+// 1. a. IIFE - odd num
+
+ var arr = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+ (function() {
+  for (var i = 0; i < arr.length; i++) {
+  if (arr[i] % 2 === 1) {
+  console.log(arr[i]);
+  }}
+ })();
+
+// a.  Anonymous function - odd num
+
+function IsOdd(arr) {
+    for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 1) {
+    console.log(arr[i]);
+    } }
+
+}
+
+
+//b . IIFE - string to caps
+
+var a = ["Banana", "Orange", "Apple", "Mango"];
+
+(function() {
+    str= a.join(' ').toUpperCase();
+    console.log(str);
+    
+   })(a);
+
+
+   // b. Anonymous function - string to caps
+
+
+   function string(caps) {
+    str= a.join(' ').toUpperCase();
+    console.log(str);
+    } 
+
+
+
+    // c. IIFE - sum of array elements
+
+    var nu = [4, 8, 7, 13, 12];
+    var sum=0;
+    
+    (function() {
+        for (var i = 0; i < nu.length; i++) {
+       sum = sum+ nu[i];
+      
+        }
+        console.log(sum);
+
+       })();
+
+// c. Anonymous function - sum of array elements
+
+function sumof(nu) {
+  
+    for (var i = 0; i < nu.length; i++) {
+        sum = sum+ nu[i];
+        
+         }
+         console.log(sum);
+}
+
+
+// d.  prime numbers in array
+
+let num = [-1,-2,-3,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+let result = [];
+
+function isPrime(num) {
+  if(num < 2) return false;
+
+  for (let i = 2; i < num; i++){
+    if(num % i == 0){
+      return false;
+    }
+  }
+  return true;
+}
+num.forEach(function (element) {
+  const item = isPrime(element);
+  if (item) {
+    result.push(element);
+  }
+});
+
+console.log(result);
+
+
+
+// e. Pallindromes in array
+
+str = ["wow","noon","peep","deed","talk"];
+
+const Pallindromes = function (str) {
+  return str.filter(function (str) {
+     return str.split("").reverse().join("") === str;
+   });
+ };
+ 
+ console.log(Pallindromes(str))
+
+
+
+ // f. Median of two sorted arrays of same size
+
+ ar1 =[1,4,7,9]
+ ar2 =[2,5,6,8]
+
+ function getMedian(ar1,ar2) {
+
+var concat = ar1.concat(ar2);
+
+var length = concat.length;;
+
+if (length%2==1) {
+
+console.log(concat[(length/2)-.5]);
+//return concat[(length/2)-.5]
+
+
+}
+
+else {
+
+  console.log((concat[length/2]+concat[(length/2)-1])/2)
+  //return ((concat[length/2]+concat[(length/2)-1])/2)
+
+
+}
+
+ } getMedian(ar1,ar2)
+
+
+
+
+ //g. Remove Duplicates From Array
+
+ array = [1, 2, 3, 2, 3, 4, 4]
+
+
+ function duplicate(array){
+
+  let duplicate =[...new Set(array)];
+
+  console.log(duplicate);
+}
+ 
+duplicate(array)
+
+
+// h. Rotate array by k times
+
+
+var arr = [1,2,3,4,5];
+var k = 2;
+
+function rotateArray(arr,k) {
+
+for (let i=0;i<k;i++) {
+
+let temp = arr[0];
+
+for (let j=0;j<arr.length;j++) {
+
+arr[j] = arr[j+1];
+
+}
+arr[arr.length -1] =temp
+
+}
+
+return arr;
+
+} console.log((rotateArray(arr,k)));
+
+
+//3. a. odd num -Arrow fucntion
+
+row=[1,2,3,4,5,6,7,8,9,10,11,12];
+
+Odd = () => {
+  for (var i = 0; i < row.length; i++) {
+  if (row[i] % 2 === 1) {
+ console.log(row[i]);
+  }}
+} 
+console.log(Odd(row));
+
+
+//3. b. string to caps
+
+var ar3 = ["Banana", "Orange", "Apple", "Mango"];
+
+strings = () => {
+ar5= ar3.join(' ').toUpperCase();
+console.log(ar5);
+} 
+  
+console.log(strings(ar3));
+
+
+
+// 3. c. sum
+
+var nu = [4, 8, 7, 13, 12];
+    var sum=0;
+
+ sumofnum = () => {
+  
+  for (var i = 0; i < nu.length; i++) {
+      sum = sum+ nu[i];
+      
+       }
+       console.log(sum);
+}
+
+console.log(sumofnum(nu));
+
+
+
+// 3. d. prime numbers
+
+
+const newArray = [-1,-2,-3,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+const Prime = num => {
+    if(num < 2) return false;
+  
+    for (let i = 2; i < num; i++){
+      if(num % i == 0){
+        return false;
+      }
+    }
+    return true;
+  };
+
+
+const myPrimeArray = newArray.filter(element => Prime(element));
+console.log(myPrimeArray);
+
+
+// 3. e. pallidromes
+
+arrays = ["wow","noon","peep","deed","talk","walk", "bob"];
+
+const Pall = (arrays) => {
+  return arrays.filter( (arrays) => {
+    return arrays.split("").reverse().join("") === arrays;
+  });
+ };
+ 
+ console.log(Pall(arrays))
+
