@@ -1,0 +1,53 @@
+// 1.  a. Get all the countries from Asia continent /region using Filter function
+
+var requests = new XMLHttpRequest()
+
+
+url = 'https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json'
+
+requests.open("GET",url)
+requests.send()
+console.log(requests);
+requests.onload = function(){
+    var data = JSON.parse(requests.response);
+    const asia=data.filter((element)=>{
+        if(element.region==='Asia'){
+            return element.name;
+        }
+    })
+    console.log(asia);
+
+    // b. Get all the countries with a population of less than 2 lakhs using Filter function
+
+
+    const pop = data.filter((element) => { return element.population<200000; 
+
+    })
+    console.log(pop)
+
+// c. Print the following details name, capital, flag using forEach function
+
+
+   const cap = data.forEach(element => {console.log("name:",element.name,"capital:",element.capital,"flag:",element.flag)})
+    console.log(cap)
+
+// d. Print the total population of countries using reduce function
+
+const population = data.reduce((a,element) => {return a+element.population})
+
+console.log(population);
+
+
+// e. Print the country which uses US Dollars as currency.
+
+
+
+var cur=[];
+        for(i=0;i<data.length;i++){
+            if(data[i].currencies[0].code==="USD")
+            {
+                console.log("name:",data[i].name,"=>",data[i].currencies[0].code)
+            }
+        }
+   
+}
