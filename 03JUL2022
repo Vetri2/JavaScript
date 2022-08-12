@@ -1,0 +1,125 @@
+//  1. Class - Movie a. b. c. d.
+
+class Movie{
+    constructor(title,studio,rating){
+        this.title=title;
+        this.studio = studio;
+        if(rating==undefined || rating==null || rating=="" ){
+            this.rating = "PG";
+        }
+        else{
+            this.rating=rating;
+        }
+    }
+    getPG(moviesList){
+        let result =[];
+        for(let i=0;i<moviesList.length;i++){
+            if(moviesList[i].rating == "PG"){
+                result.push(moviesList[i]);
+            }
+        }
+    return result}}
+let movie1 = new Movie("Thuppaki","Sun Pictures","PG1");
+let movie2 = new Movie("Mangatha","Red Giant","PG3");
+let movie3 = new Movie("Batsha","Gemini");
+let movie4 = new Movie("Vikram","AVM","PG4");
+let movie5 = new Movie("Casino Royale","Eon Productions","PG13")
+let movies = [movie1,movie2,movie3,movie4];
+let getPGDetails = movie4.getPG(movies);
+console.log(getPGDetails);
+
+
+// 2. Convert the UML diagram to Typescript class. - use number for double
+
+class circle {
+
+constructor (radius,color) {
+
+this.radius = radius;
+this.color = color;
+
+
+}
+
+Circle() {
+
+let circ = this.radius+" "+this.color;
+return circ
+
+}
+
+getRadius() {
+
+this.radius = this.radius
+return this.radius
+
+}
+
+
+}
+
+var Mycircle = new circle (Number(1.0), "red")  // circle(radius: double, color: String)
+console.log(Mycircle.Circle());
+
+var Mycircle1 = new circle (Number(1.0)) // getRadius(): double
+console.log(Mycircle1.getRadius());
+
+
+
+// 3. Write a “person” class to hold all the details.
+
+class Person{
+    constructor(Name,Age,Sex,Address,Phone,Email){
+        this.Name = Name
+        this.Age = Age
+        this.Sex = Sex
+        this.Address = Address
+        this.Phone = Phone
+        this.Email = Email
+    }
+    details() {
+        //this.Name= namepassed
+        let persondetails = this.Name+" "+this.Age+" "+this.Sex+" "+this.Address+" "+this.Phone+" "+this.Email;
+
+    return persondetails
+
+    }
+}
+
+var Mydetials = new Person("Ram",10,"Male","Chennai","123458899","abc@gmail.com")
+
+console.log(Mydetials.details("Raja"))
+
+
+var Mydetials1 = new Person("Raj",12,"Female","madurai","123448899","abc@gmail.com")
+console.log(Mydetials1.details())
+
+
+
+
+// 4. write a class to calculate the uber price.
+
+
+class uber {
+
+constructor (distance,price,waitingcharge) {
+    this.distance = distance
+    this.price = price
+    this.waitingcharge = waitingcharge
+
+
+
+}
+
+uber1 () {
+
+var price1 = ((this.distance*this.price) + this.waitingcharge)
+
+console.log("Uber Price: "+price1+" Rupees");
+
+}
+
+}
+var uberprice1 = new uber(7,7,15);
+console.log(uberprice1)
+console.log(uberprice1.uber1())
